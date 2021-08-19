@@ -1,0 +1,11 @@
+{
+    "name": "root/app",
+    "require": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "config": {
+        "platform": {
+            "php": "7.4"
+        }
+    }
+}

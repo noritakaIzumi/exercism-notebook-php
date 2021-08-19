@@ -1,0 +1,12 @@
+/**/.exercism
+/*/README.md
+
+# Editor settings
+/.idea
+
+# Composer
+vendor
+composer.lock
+
+# PHPUnit
+.phpunit.result.cache

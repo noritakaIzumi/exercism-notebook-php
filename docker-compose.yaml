@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  php:
+    image: php:7.4-cli
+    volumes:
+      - ./:/source
+    working_dir: /source
+    command:
+      - echo
+  composer:
+    image: composer
+    volumes:
+      - ./:/app
+    command:
+      - composer
+      - update
