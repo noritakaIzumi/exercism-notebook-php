@@ -2,7 +2,9 @@ version: '3'
 
 services:
   php:
-    image: php:7.4-cli
+    build:
+      context: .
+      dockerfile: php74-cli.dockerfile
     volumes:
       - ./:/source
     working_dir: /source

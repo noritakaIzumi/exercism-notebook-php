@@ -1,11 +1,13 @@
 {
-    "name": "root/app",
-    "require": {
-        "phpunit/phpunit": "^9.5"
-    },
-    "config": {
-        "platform": {
-            "php": "7.4"
-        }
+  "name": "root/app",
+  "require": {
+    "phpunit/phpunit": "^9.5",
+    "ext-mbstring": "*"
+  },
+  "config": {
+    "platform": {
+      "php": "7.4",
+      "ext-mbstring": "0"
     }
+  }
 }
