@@ -1,0 +1,24 @@
+{
+  "name": "exercism-php",
+  "version": "1.0.0",
+  "description": "ここにある問題を解くやつ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "view-test-result": "junit-cli-report-viewer"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/exercism-notebook/exercism-php.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/exercism-notebook/exercism-php/issues"
+  },
+  "homepage": "https://gitlab.com/exercism-notebook/exercism-php#readme",
+  "devDependencies": {
+    "junit-cli-report-viewer": "~1.5.2"
+  }
+}

@@ -13,3 +13,7 @@ composer.lock
 
 # Exercism test results
 /output
+
+# npm
+/node_modules
+/package-lock.json
