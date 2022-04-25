@@ -10,3 +10,6 @@ composer.lock
 
 # PHPUnit
 .phpunit.result.cache
+
+# Exercism test results
+/output
