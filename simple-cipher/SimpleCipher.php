@@ -46,6 +46,38 @@ class SimpleCipher
     }
 
     /**
+     * @param string|null $key
+     *
+     * @return void
+     * @throws InvalidArgumentException thrown if the key contains any characters other than lowercase letters
+     * @throws Exception thrown if other error occurs
+     */
+    private function setKey(?string $key)
+    {
+        if (is_null($key)) {
+            $key = '';
+            for ($i = 0; $i < 100; ++$i) {
+                /** @noinspection PhpUnhandledExceptionInspection */
+                $codepoint = random_int(
+                    self::CODEPOINT_LOWERCASE_A,
+                    self::CODEPOINT_LOWERCASE_Z
+                );
+                $key .= chr($codepoint);
+                $this->keyCodepoints[] = $codepoint;
+            }
+        } else {
+            foreach (str_split($key) as $char) {
+                $codepoint = ord($char);
+                if ($codepoint < self::CODEPOINT_LOWERCASE_A || self::CODEPOINT_LOWERCASE_Z < $codepoint) {
+                    throw new InvalidArgumentException();
+                }
+                $this->keyCodepoints[] = ord($char);
+            }
+        }
+        $this->key = $key;
+    }
+
+    /**
      * get cipher text.
      *
      * @param string $plainText
@@ -84,37 +116,5 @@ class SimpleCipher
         }
 
         return $plainText;
-    }
-
-    /**
-     * @param string|null $key
-     *
-     * @return void
-     * @throws InvalidArgumentException thrown if the key contains any characters other than lowercase letters
-     * @throws Exception thrown if other error occurs
-     */
-    private function setKey(?string $key)
-    {
-        if (is_null($key)) {
-            $key = '';
-            for ($i = 0; $i < 100; ++$i) {
-                /** @noinspection PhpUnhandledExceptionInspection */
-                $codepoint = random_int(
-                    self::CODEPOINT_LOWERCASE_A,
-                    self::CODEPOINT_LOWERCASE_Z
-                ); // codepoint of lowercase alphabet.
-                $key .= chr($codepoint);
-                $this->keyCodepoints[] = $codepoint;
-            }
-        } else {
-            foreach (str_split($key) as $char) {
-                $codepoint = ord($char);
-                if ($codepoint < self::CODEPOINT_LOWERCASE_A || self::CODEPOINT_LOWERCASE_Z < $codepoint) {
-                    throw new InvalidArgumentException();
-                }
-                $this->keyCodepoints[] = ord($char);
-            }
-        }
-        $this->key = $key;
     }
 }
