@@ -1,7 +1,7 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - name: Install Exercism
-    init: sudo bash ./scripts/init-gitpod.sh
+    init: sudo bash ./scripts/install-exercism.sh
     command: sudo cp -a ./exercism /usr/local/bin
   - name: Install node packages
     init: npm install
