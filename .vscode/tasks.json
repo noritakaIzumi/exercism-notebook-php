@@ -24,6 +24,16 @@
                 "submit",
                 "${file}"
             ]
+        },
+        {
+            "label": "Git: commit",
+            "type": "shell",
+            "command": "git restore --staged $(git diff --name-only --staged); find ${fileDirname} -type f -name '*.php' | xargs git add --verbose && git commit -m '${relativeFileDirname}'"
+        },
+        {
+            "label": "Git: push",
+            "type": "shell",
+            "command": "git push"
         }
     ],
     "presentation": {
