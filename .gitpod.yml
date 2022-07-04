@@ -7,6 +7,8 @@ tasks:
     init: npm install
   - name: Build containers
     init: docker-compose up --remove-orphans
+  - name: Add Exercism to PATH
+    command: sudo cp exercism /usr/local/bin/ && rm exercism
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 # ports:
