@@ -1,0 +1,37 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Exercism: run tests",
+            "type": "shell",
+            "command": "docker-compose",
+            "args": [
+                "run",
+                "--rm",
+                "php",
+                "bash",
+                "./exec_test.sh",
+                "${relativeFileDirname}"
+            ]
+        },
+        {
+            "label": "Exercism: submit",
+            "type": "shell",
+            "command": "exercism",
+            "args": [
+                "submit",
+                "${file}"
+            ]
+        }
+    ],
+    "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "showReuseMessage": true,
+        "clear": false
+    }
+}
