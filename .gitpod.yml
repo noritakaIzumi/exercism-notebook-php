@@ -2,7 +2,7 @@
 tasks:
   - name: Init Exercism CLI
     init: bash ./scripts/install-exercism.sh
-    command: exercism configure --token=${EXERCISM_TOKEN} && sudo cp exercism /usr/local/bin/ && rm exercism
+    command: sudo cp exercism /usr/local/bin/ && rm exercism && exercism configure --token=${EXERCISM_TOKEN}
   - name: Install node packages
     init: npm install
   - name: Build containers
