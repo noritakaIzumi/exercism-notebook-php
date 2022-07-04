@@ -28,7 +28,7 @@
         {
             "label": "Git: commit",
             "type": "shell",
-            "command": "git restore --staged $(git diff --name-only --staged); find ${fileDirname} -type f -name '*.php' | xargs git add --verbose && git commit -m '${relativeFileDirname}'"
+            "command": "git restore --staged $(git diff --name-only --staged); find ${fileDirname} -maxdepth 1 -type f -name '*.php' | xargs git add --verbose && git commit -m 'feat: ${relativeFileDirname}'"
         },
         {
             "label": "Git: push",
