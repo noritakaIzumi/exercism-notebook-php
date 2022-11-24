@@ -8,8 +8,7 @@ services:
     volumes:
       - ./:/source
     working_dir: /source
-    command:
-      - echo
+    tty: true
   composer:
     image: composer
     volumes:
